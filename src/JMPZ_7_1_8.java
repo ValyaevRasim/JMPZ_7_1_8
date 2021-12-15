@@ -27,12 +27,14 @@ public class JMPZ_7_1_8 {
         System.out.println(numGen.cond(-2));
         System.out.println(numGen.cond(Byte.MIN_VALUE));
     }
+
     @FunctionalInterface
     public interface NumberGenerator<T extends Number> {
         boolean cond(T arg);
     }
+
     public static NumberGenerator<? super Number> getGenerator() {
-        return (Number c) -> c.intValue() > 0;
+        return  c -> c.intValue() > 0;
     }
 
 }
